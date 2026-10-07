@@ -10,6 +10,8 @@ pixi global install rattler-index
 pixi-dev publish --force --path detector --target-channel channel
 rattler-index --force --config index-config.toml fs channel
 pixi-dev run --manifest-path consumer detect
+pixi-dev clean --manifest-path consumer --environment default
+CONDA_OVERRIDE_USERNAME_LENGTH=12 pixi-dev run --manifest-path consumer detect
 ```
 
 When prompted, trust the detector and choose `This repository`.
