@@ -1,0 +1,32 @@
+[workspace]
+channels = ["../channel"]
+platforms = [
+  { name = "long-username", platform = "linux-64", username_length = "10" },
+  { name = "short-username", platform = "linux-64" },
+  { name = "long-username-linux-aarch64", platform = "linux-aarch64", username_length = "10" },
+  { name = "short-username-linux-aarch64", platform = "linux-aarch64" },
+  { name = "long-username-osx-64", platform = "osx-64", username_length = "10" },
+  { name = "short-username-osx-64", platform = "osx-64" },
+  { name = "long-username-osx-arm64", platform = "osx-arm64", username_length = "10" },
+  { name = "short-username-osx-arm64", platform = "osx-arm64" },
+  { name = "long-username-win-64", platform = "win-64", username_length = "10" },
+  { name = "short-username-win-64", platform = "win-64" },
+]
+
+[tasks]
+detect = "echo short-username"
+
+[target.long-username.tasks]
+detect = "echo long-username"
+
+[target.long-username-linux-aarch64.tasks]
+detect = "echo long-username"
+
+[target.long-username-osx-64.tasks]
+detect = "echo long-username"
+
+[target.long-username-osx-arm64.tasks]
+detect = "echo long-username"
+
+[target.long-username-win-64.tasks]
+detect = "echo long-username"
