@@ -4,7 +4,7 @@ A Rust detector reports the username's character count as `__username_length`. T
 
 The detector reads the first nonempty `LOGNAME`, `USER`, `LNAME`, or `USERNAME` environment variable. Platform declarations use `username_length`, while the detector protocol and channel registration use `__username_length`.
 
-The recipe supports Linux, macOS, and Windows. Build it on the machine running the demo.
+The detector uses `pixi-build-rust` and supports Linux, macOS, and Windows. Build it on the machine running the demo.
 
 ## Run
 

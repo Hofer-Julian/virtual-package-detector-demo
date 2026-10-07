@@ -8,6 +8,15 @@ name = "username-length-detect"
 version = "0.1.0"
 
 [package.build.backend]
-name = "pixi-build-rattler-build"
+name = "pixi-build-rust"
 channels = ["https://prefix.dev/conda-forge"]
+
+[package.build.config]
+compilers = ["rust"]
+
+[package.build.target.linux.config]
+env = { RUSTFLAGS = "-C target-feature=+crt-static -C relocation-model=static" }
+
+[package.build.target.win.config]
+env = { RUSTFLAGS = "-C target-feature=+crt-static" }
 
